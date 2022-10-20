@@ -1,5 +1,6 @@
 <template>
   <div>
+    <GoBack />
     <section class="destinations">
       <h1>
         {{ destination.name }}
@@ -14,7 +15,7 @@
     </section>
     <section class="experiences">
       <h2>Top experiences in {{ destination.name }}</h2>
-      <div class="cards">
+      <div class="cards" id="experience">
         <div
           v-for="experience in destination.experiences"
           :key="experience.slug"
@@ -24,11 +25,12 @@
             :to="{
               name: 'experienceDetails',
               params: { experienceSlug: experience.slug },
+              hash: '#experience',
             }"
           >
             <img
               :src="require(`@/assets/${experience.image}`)"
-              :alt="experience.image"
+              :alt="experience.name"
             />
             <span class="card__text">
               {{ experience.name }}
@@ -42,7 +44,12 @@
 </template>
 <script>
 import store from "@/store";
+import GoBack from "@/components/GoBack";
+
 export default {
+  components: {
+    GoBack,
+  },
   data() {
     return {};
   },

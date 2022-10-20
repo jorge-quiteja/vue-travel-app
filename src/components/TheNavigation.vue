@@ -19,6 +19,9 @@
           {{ destination.name }}
         </router-link>
       </li>
+      <li class="links">
+        <router-link to="/user">Dashboard</router-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -37,20 +40,23 @@ export default {
 <style scoped>
 #nav {
   display: flex;
-  width: 100%;
-  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  z-index: 1;
 }
 #nav a {
-  font-weight: bold;
   color: #2c3e50;
   text-decoration: none;
+  font-weight: bold;
 }
 #nav a.vue-school-active-class {
   color: #ab26ab;
 }
 .nav-links {
   display: flex;
-  align-items: center;
 }
 .links {
   padding-right: 20px;

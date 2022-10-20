@@ -56,6 +56,7 @@ img {
   justify-content: space-between;
 }
 a {
+  color: lightseagreen;
   text-decoration: none;
 }
 a:hover,
